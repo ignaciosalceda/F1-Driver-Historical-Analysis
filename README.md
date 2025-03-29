@@ -58,8 +58,6 @@ A full **interactive web app** was built using **Streamlit**:
   - Explains the methodology, clusters, and why this analysis matters
   - Helps casual and expert F1 fans alike understand the value of this data-centric approach
 
-- 🖼️ (Optional) Integration with Wikipedia API for fetching driver images was tested and removed to optimize performance.
-
 > The app allows fans to **explore, compare, and understand** driver greatness beyond surface-level stats.
 
 ---
