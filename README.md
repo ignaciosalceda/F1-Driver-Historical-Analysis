@@ -15,7 +15,7 @@ To classify Formula 1 drivers into **performance tiers** using a **data-driven, 
 
 - Calculated for each driver:
   - `ratio_points_per_race`: Total corrected points / total races
-  - `win_ratio`: % of races finished in P1
+  - `win_ratio`: % of times finished above teammate
   - `combined_metric`: product of the above two (used earlier for ranking)
 
 ---
