@@ -15,7 +15,7 @@ To classify Formula 1 drivers into **performance tiers** using a **data-driven, 
 
 - Calculated for each driver:
   - `ratio_points_per_race`: Total corrected points / total races
-  - `win_ratio`: % of times finished above teammate
+  - `win_ratio`: % of races where the driver beat their teammate
   - `combined_metric`: product of the above two (used earlier for ranking)
 
 ---
@@ -32,19 +32,35 @@ To classify Formula 1 drivers into **performance tiers** using a **data-driven, 
 
 ### 3. **K-Means Clustering**
 - Applied **K-Means** clustering on the 2D feature space.
-- Used 3 clusters to identify performance tiers:
+- Used 6 clusters to identify performance tiers:
   - `Elite`
-  - `Consistent`
-  - `Support`
+  - `Winners`
+  - `Overperformers`
+  - `Decent`
+  - `Underperformers`
+  - `Poor`
 
 ### 4. **Labeling Tiers**
-- Mapped each cluster to a human-readable label based on win rate and scoring performance.
+- Mapped each cluster to a human-readable label based on relative performance to teammates and scoring consistency.
 
-### 5. **Visualization**
-- Created a **zoomable, interactive Plotly scatter plot**:
-  - Axes: `ratio_points_per_race` vs. `win_ratio`
-  - Color: Cluster labels
-  - Labels: Driver names shown directly next to each point
+---
+
+## 💻 Streamlit App
+
+A full **interactive web app** was built using **Streamlit**:
+
+- 🧍 **Driver Explorer**: Select any driver to see:
+  - Their cluster label and visual definition
+  - Highlighted position in a 2D plot of all drivers
+  - A ranking table showing nearby drivers in performance
+
+- 📖 **Project Overview Page**:
+  - Explains the methodology, clusters, and why this analysis matters
+  - Helps casual and expert F1 fans alike understand the value of this data-centric approach
+
+- 🖼️ (Optional) Integration with Wikipedia API for fetching driver images was tested and removed to optimize performance.
+
+> The app allows fans to **explore, compare, and understand** driver greatness beyond surface-level stats.
 
 ---
 
@@ -61,3 +77,4 @@ To classify Formula 1 drivers into **performance tiers** using a **data-driven, 
 - A labeled, zoomable 2D map of F1 drivers by performance tier.
 - A robust, standardized approach to profiling drivers across different F1 eras and contexts.
 - An interpretable model that balances scoring performance with teammate-relative dominance.
+- A full-featured, user-friendly Streamlit app.
